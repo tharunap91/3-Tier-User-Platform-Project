@@ -37,7 +37,7 @@ jobs:
           name: gitleaks-report
           path: gitleaks-report.json
           if-no-files-found: warn
-checkov-terraform:
+  checkov-terraform:
     name: Checkov Terraform Scan
     runs-on: ubuntu-latest
     needs: gitleaks-scan
@@ -61,7 +61,7 @@ checkov-terraform:
           name: checkov-terraform-report
           path: checkov-terraform-report.json
           if-no-files-found: warn
-checkov-k8s:
+  checkov-k8s:
    name: Checkov Kubernetes Scan
    runs-on: ubuntu-latest
    needs: gitleaks-scan
@@ -86,10 +86,10 @@ checkov-k8s:
          path: checkov-k8s-report.json
          if-no-files-found: warn
 checkov-dockerfile:
- name: Checkov Dockerfile Scan
- runs-on: ubuntu-latest
- needs: gitleaks-scan
- steps:
+  name: Checkov Dockerfile Scan
+  runs-on: ubuntu-latest
+  needs: gitleaks-scan
+  steps:
     - name: Checkout source code
       uses: actions/checkout@v4
     - name: Setup Python
