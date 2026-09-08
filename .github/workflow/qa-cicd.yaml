@@ -7,7 +7,7 @@ on:
     paths:
       - client/**
       - server/**
-      - .github/workflows/qa-cicd.yaml
+      - .github/workflow/qa-cicd.yaml
 permissions:
   contents: write
  
