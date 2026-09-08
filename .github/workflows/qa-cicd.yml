@@ -109,6 +109,3 @@ checkov-k8s:
           name: checkov-dockerfile-report
           path: checkov-dockerfile-report.json
           if-no-files-found: warn
-          
-          path: gitleaks-report.json
-          if-no-files-found: wa
