@@ -35,6 +35,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: gitleaks-report
+          path: gitleaks-report.json
+          if-no-files-found: warn
 checkov-terraform:
     name: Checkov Terraform Scan
     runs-on: ubuntu-latest
