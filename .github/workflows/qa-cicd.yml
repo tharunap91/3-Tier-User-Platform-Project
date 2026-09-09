@@ -350,5 +350,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} 
           
-      - name: "Example show SonarQube Quality Gate Status values"
+      - name: "Example show SonarQube Quality Gate Status valuees"
         run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
