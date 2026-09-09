@@ -470,3 +470,26 @@ jobs:
           tags: |
             tharunap91/nodejs-app:${{ github.sha }}
             tharunap91/nodejs-app:latest
+      - name: Generate source SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: spdx-json
+          output-file: source-sbom.spdx.json
+          upload-artifact: true
+
+      - name: Generate image SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          image: tharunap91/nodejs-app:${{ github.sha }}
+          format: spdx-json
+          output-file: image-sbom.spdx.json
+          upload-artifact: true  
+          
+      - name: Push
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          tags: |
+            tharunap91/nodejs-app:${{ github.sha }}
+            tharunap91/nodejs-app:latest
